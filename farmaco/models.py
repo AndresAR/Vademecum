@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.db import models
 from django.template.defaultfilters import slugify
-from categoria.models import Categoria
 
 # Creacion Modelo Farmaco
 
@@ -9,7 +8,7 @@ from categoria.models import Categoria
 class Farmaco(models.Model):
     nombre = models.CharField(max_length=50)
     slug = models.SlugField(editable=False)
-    clasificacion = models.ForeignKey(Categoria)
+    # clasificacion = models.ForeignKey('Categoria')
     # propiedades farmacos
     accion_terapeutica = models.TextField()
     indicacion = models.TextField()
