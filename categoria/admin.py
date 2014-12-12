@@ -1,3 +1,7 @@
 from django.contrib import admin
+from .models import Categoria
+from django_markdown.admin import MarkdownModelAdmin
 
-# Register your models here.
+@admin.register(Categoria)
+class CategoriaAdmin(MarkdownModelAdmin):
+    pass

@@ -36,6 +36,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'farmaco',
+    'categoria',
+    'django_markdown',
 )
 
 MIDDLEWARE_CLASSES = (
