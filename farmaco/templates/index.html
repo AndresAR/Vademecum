@@ -1,3 +1,4 @@
+{% load django_markdown %}
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -8,7 +9,7 @@
 <h1>Farmacos</h1>
 {% for farmaco in object_list %}
     <h2>{{ farmaco.nombre }}</h2>
-    <p>{{ farmaco.clasificacion.nombre }}</p>
+    <p>{{ farmaco.clasificacion.nombre }}  {{ farmaco.clasificacion.descripcion|markdown }}</p>
 {% endfor %}
 </body>
 </html>
