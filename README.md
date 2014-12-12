@@ -21,4 +21,4 @@ Katherine Cáceres Meza, encargada del contenido de la aplicación y usuaria pri
 
 ## License
 
-The MIT License (MIT)
+GPLv2
