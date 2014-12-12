@@ -3,7 +3,7 @@ from django.db import models
 from django.template.defaultfilters import slugify
 
 
-# Creacion Modelo Categoria de Farmacos(clasificación)
+# Creación Modelo Categoria de Farmacos(clasificación)
 
 class Categoria(models.Model):
     nombre = models.CharField(max_length=50)
