@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'farmaco',
     'categoria',
     'django_markdown',
+
 )
 
 MIDDLEWARE_CLASSES = (

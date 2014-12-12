@@ -1,5 +1,8 @@
 from django.contrib import admin
 from .models import Farmaco
+from django_markdown.admin import MarkdownModelAdmin
 
-# Register your models here.
-admin.site.register(Farmaco)
+@admin.register(Farmaco)
+class FarmacoAdmin(MarkdownModelAdmin):
+    pass
+
