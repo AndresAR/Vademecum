@@ -21,4 +21,4 @@ Katherine Cáceres Meza, encargada del contenido de la aplicación y usuaria pri
 
 ## License
 
-TODO: Write license
+The MIT License (MIT)
