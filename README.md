@@ -10,10 +10,10 @@ Vademecum, es un proyecto creado en Django para la muestra de medicamentos y sus
 
 ## Usage
 
-Agregar Farmaco
-Agregar Categorias
-Modificar Farmacos (Previo registro)
-Modificar Categorias (Previo regitro)
+* Agregar Farmaco
+* Agregar Categorias
+* Modificar Farmacos (Previo registro)
+* Modificar Categorias (Previo regitro)
 
 ## Credits
 
