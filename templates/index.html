@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load django_markdown %}
+
+{% block body %}
+    <h1>Listado de Farmacos</h1>
+    {% for farmaco in object_list %}
+                <!-- Title -->
+                <h3>{{ farmaco.nombre }} <small> <span class="glyphicon glyphicon-tag"></span> {{ farmaco.clasificacion.nombre }}</small></h3>
+                <hr>
+    {% endfor %}
+{% endblock %}

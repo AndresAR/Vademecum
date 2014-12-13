@@ -1,14 +1,18 @@
 # -*- coding: utf-8 -*-
 from django.db import models
 from django.template.defaultfilters import slugify
+from categoria.models import Categoria
 
-# Creacion Modelo Farmaco
+
+class FarmacoQuerySet(models.QuerySet):
+    def validado(self):
+        return self.filter(valido=True)
 
 
 class Farmaco(models.Model):
     nombre = models.CharField(max_length=50)
     slug = models.SlugField(editable=False)
-    # clasificacion = models.ForeignKey('Categoria')
+    clasificacion = models.ForeignKey(Categoria)
     # propiedades farmacos
     accion_terapeutica = models.TextField()
     indicacion = models.TextField()
@@ -16,6 +20,9 @@ class Farmaco(models.Model):
     efectos_colaterales = models.TextField()
     presentacion = models.TextField()
     composicion = models.TextField()
+    valido = models.BooleanField(default=True)
+
+    objects = FarmacoQuerySet.as_manager()
 
     def __unicode__(self):
         return self.nombre
