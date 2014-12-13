@@ -1,8 +1,17 @@
 from django.views import generic
-from . import models
+from django.shortcuts import render
+from categoria.models import Categoria
+from .models import Farmaco
 
 
-class FarmacoIndex(generic.ListView):
-    queryset = models.Farmaco.objects.validado()
-    template_name = "index.html"
-    paginate_by = 10
+def index(request):
+    context_dict = {}
+    try:
+        category = Categoria.objects.all()
+        farmaco = Farmaco.objects.all()
+        context_dict['categoria'] = category
+        context_dict['farmacos'] = farmaco
+    except Categoria.DoesNotExist:
+        pass
+
+    return render(request, 'index.html', context_dict)

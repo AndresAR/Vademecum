@@ -2,10 +2,20 @@
 {% load django_markdown %}
 
 {% block body %}
-    <h1>Listado de Farmacos</h1>
-    {% for farmaco in object_list %}
+    <h1>Listado de Farmacos</h1><hr>
+    {% for farmacos in farmacos %}
                 <!-- Title -->
-                <h3>{{ farmaco.nombre }} <small> <span class="glyphicon glyphicon-tag"></span> {{ farmaco.clasificacion.nombre }}</small></h3>
-                <hr>
+                <!--<h3>{{ farmacos.nombre }} <small> <span class="glyphicon glyphicon-tag"></span> {{ farmacos.clasificacion.nombre }}</small></h3>
+                <hr>-->
+        <dl>
+            <dt>{{ farmacos.nombre }}</dt>
+            <dd><span class="glyphicon glyphicon-tag"></span> {{ farmacos.clasificacion.nombre }}</dd>
+        </dl>
     {% endfor %}
 {% endblock %}
+{% block categoria%}
+    {% for categoria in categoria %}
+        {% block categoria_num %}{{ categoria.count }}{% endblock%}
+        <li><a href="#">{{ categoria.nombre }}</a></li>
+    {% endfor %}
+{% endblock%}

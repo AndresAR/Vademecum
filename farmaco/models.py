@@ -2,6 +2,7 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 from categoria.models import Categoria
+from django_markdown.models import MarkdownField
 
 
 class FarmacoQuerySet(models.QuerySet):
@@ -14,12 +15,12 @@ class Farmaco(models.Model):
     slug = models.SlugField(editable=False)
     clasificacion = models.ForeignKey(Categoria)
     # propiedades farmacos
-    accion_terapeutica = models.TextField()
-    indicacion = models.TextField()
-    posologia = models.TextField()
-    efectos_colaterales = models.TextField()
-    presentacion = models.TextField()
-    composicion = models.TextField()
+    accion_terapeutica = MarkdownField(blank=True)
+    indicacion = MarkdownField(blank=True)
+    posologia = MarkdownField(blank=True)
+    efectos_colaterales = MarkdownField(blank=True)
+    presentacion = MarkdownField(blank=True)
+    composicion = MarkdownField(blank=True)
     valido = models.BooleanField(default=True)
 
     objects = FarmacoQuerySet.as_manager()
