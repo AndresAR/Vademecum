@@ -15,7 +15,6 @@
 {% endblock %}
 {% block categoria%}
     {% for categoria in categoria %}
-        {% block categoria_num %}{{ categoria.count }}{% endblock%}
         <li><a href="#">{{ categoria.nombre }}</a></li>
     {% endfor %}
 {% endblock%}
